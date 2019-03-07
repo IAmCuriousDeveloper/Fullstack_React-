@@ -3,12 +3,15 @@
   no-undef, jsx-a11y/label-has-for, react/jsx-first-prop-new-line
 */
 class TimersDashboard extends React.Component {
+  //array to store the timers
   state = {
     timers: [],
   };
 
   componentDidMount(){
+    //when component mounts load timer from the server
     this.loadTimersFromServer();
+    //simulating the database behaviour,(after 5 sec it will load)
     setInterval(this.loadTimersFromServer,5000);
   }
 

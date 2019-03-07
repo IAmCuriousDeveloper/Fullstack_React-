@@ -2,6 +2,7 @@
   eslint-disable react/prefer-stateless-function, react/jsx-boolean-value,
   no-undef, jsx-a11y/label-has-for, react/jsx-first-prop-new-line
 */
+//handling the start and the stop functionality
 class TimersDashboard extends React.Component {
   state = {
     timers: [
@@ -71,6 +72,7 @@ class TimersDashboard extends React.Component {
     });
   };
 
+  //implementing startTimer 
   startTimer = (timerId) => {
     const now = Date.now();
 
@@ -87,6 +89,7 @@ class TimersDashboard extends React.Component {
     });
   };
 
+  //implementing the stopTimer
   stopTimer = (timerId) => {
     const now = Date.now();
 

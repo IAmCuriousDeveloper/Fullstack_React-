@@ -2,14 +2,14 @@
     {
         "title": "Learn React",
         "project": "Mastering React",
-        "elapsed": 5485991,
+        "elapsed": 5488809,
         "id": "0a4a79cb-b06d-4cb1-883d-549a1e3b66d7",
         "runningSince": null
     },
     {
         "title": "Learn Redux",
         "project": "Mastering Redux",
-        "elapsed": 5157351,
+        "elapsed": 5158993,
         "id": "a73c1d19-f32d-4aff-b470-cea4e792406a",
         "runningSince": null
     },
@@ -21,10 +21,10 @@
         "runningSince": null
     },
     {
-        "title": "hi i m new ",
-        "project": "say hi to me ",
-        "id": "c04f304b-b364-48c9-a250-41809a13a486",
-        "elapsed": 0,
+        "title": "yeee",
+        "project": "made it ",
+        "id": "92b58c71-e891-4dfc-8596-1806f54c4b0b",
+        "elapsed": 2327,
         "runningSince": null
     }
 ]

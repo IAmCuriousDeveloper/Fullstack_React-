@@ -35,6 +35,7 @@ class TimersDashboard extends React.Component {
   };
 
   render() {
+    //passing the onformsubmit to toggleabletimerform so that we can create timer
     return (
       <div className='ui three column centered grid'>
         <div className='column'>
@@ -71,6 +72,8 @@ class ToggleableTimerForm extends React.Component {
 
   render() {
     if (this.state.isOpen) {
+      //if form is open
+      //again passing the handleformsubmit to the timerform also passing onformclose to close the form
       return (
         <TimerForm
           onFormSubmit={this.handleFormSubmit}
@@ -94,6 +97,7 @@ class ToggleableTimerForm extends React.Component {
 
 class EditableTimerList extends React.Component {
   render() {
+    //maping all the timer to editabletimer
     const timers = this.props.timers.map((timer) => (
       <EditableTimer
         key={timer.id}
@@ -116,7 +120,7 @@ class EditableTimer extends React.Component {
   state = {
     editFormOpen: false,
   };
-
+  //if form is open render timerform with props also remember it also has the onformsubmit
   render() {
     if (this.state.editFormOpen) {
       return (

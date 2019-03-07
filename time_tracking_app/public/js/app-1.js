@@ -2,6 +2,7 @@
   eslint-disable react/prefer-stateless-function, react/jsx-boolean-value,
   no-undef, jsx-a11y/label-has-for
 */
+//parent component
 class TimersDashboard extends React.Component {
   render() {
     return (
@@ -16,7 +17,7 @@ class TimersDashboard extends React.Component {
     );
   }
 }
-
+//it will either render timerform or plus icon
 class ToggleableTimerForm extends React.Component {
   render() {
     if (this.props.isOpen) {
@@ -34,9 +35,10 @@ class ToggleableTimerForm extends React.Component {
     }
   }
 }
-
+//responsible for the rendering of timers
 class EditableTimerList extends React.Component {
   render() {
+    //passing the props to editable timer
     return (
       <div id='timers'>
         <EditableTimer
@@ -57,11 +59,12 @@ class EditableTimerList extends React.Component {
     );
   }
 }
-
+//according to editform open it will either render timerform or timer face
 class EditableTimer extends React.Component {
   render() {
     if (this.props.editFormOpen) {
       return (
+        //passing props to timerform
         <TimerForm
           title={this.props.title}
           project={this.props.project}
@@ -69,6 +72,7 @@ class EditableTimer extends React.Component {
       );
     } else {
       return (
+        //rendering timer face
         <Timer
           title={this.props.title}
           project={this.props.project}
@@ -79,7 +83,7 @@ class EditableTimer extends React.Component {
     }
   }
 }
-
+//rendering timer with all the props
 class Timer extends React.Component {
   render() {
     const elapsedString = helpers.renderElapsedString(this.props.elapsed);
@@ -113,7 +117,7 @@ class Timer extends React.Component {
     );
   }
 }
-
+//according to the props it will show update or create then it will render the deafult value with passing props if its in edit mode
 class TimerForm extends React.Component {
   render() {
     const submitText = this.props.title ? 'Update' : 'Create';

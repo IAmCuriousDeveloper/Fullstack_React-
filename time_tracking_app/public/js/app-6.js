@@ -2,6 +2,7 @@
   eslint-disable react/prefer-stateless-function, react/jsx-boolean-value,
   no-undef, jsx-a11y/label-has-for, react/jsx-first-prop-new-line
 */
+//adding forceupdate to timer
 class TimersDashboard extends React.Component {
   state = {
     timers: [
@@ -197,11 +198,13 @@ class EditableTimer extends React.Component {
 }
 
 class Timer extends React.Component {
+  //when component mounts setinterval with forceUpdate func
   componentDidMount() {
     this.forceUpdateInterval = setInterval(() => this.forceUpdate(), 50);
   }
 
   componentWillUnmount() {
+    //when unmount clear the forceupadte
     clearInterval(this.forceUpdateInterval);
   }
 

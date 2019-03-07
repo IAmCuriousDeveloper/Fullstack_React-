@@ -2,6 +2,7 @@
   eslint-disable react/prefer-stateless-function, react/jsx-boolean-value,
   no-undef, jsx-a11y/label-has-for, react/jsx-first-prop-new-line
 */
+//edit functionality added
 class TimersDashboard extends React.Component {
   state = {
     timers: [
@@ -38,6 +39,7 @@ class TimersDashboard extends React.Component {
     });
   };
 
+  //this function is being pass down to editable timer
   updateTimer = (attrs) => {
     this.setState({
       timers: this.state.timers.map((timer) => {

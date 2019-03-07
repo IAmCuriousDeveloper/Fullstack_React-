@@ -2,6 +2,7 @@
   eslint-disable react/prefer-stateless-function, react/jsx-boolean-value,
   no-undef, jsx-a11y/label-has-for, react/jsx-first-prop-new-line
 */
+//adding delete functionality
 class TimersDashboard extends React.Component {
   state = {
     timers: [
@@ -201,6 +202,7 @@ class EditableTimer extends React.Component {
   }
 }
 
+//here we added on trashclick
 class Timer extends React.Component {
   handleTrashClick = () => {
     this.props.onTrashClick(this.props.id);

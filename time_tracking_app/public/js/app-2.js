@@ -2,7 +2,9 @@
   eslint-disable react/prefer-stateless-function, react/jsx-boolean-value,
   no-undef, jsx-a11y/label-has-for
 */
+//making stateful app
 class TimersDashboard extends React.Component {
+  //contains the times and its props
   state = {
     timers: [
       {
@@ -37,6 +39,7 @@ class TimersDashboard extends React.Component {
 }
 
 class ToggleableTimerForm extends React.Component {
+  //by default form will be closed
   state = {
     isOpen: false,
   };
@@ -67,6 +70,8 @@ class ToggleableTimerForm extends React.Component {
 
 class EditableTimerList extends React.Component {
   render() {
+    //we had passed the timers to the editabletimer list and here we are using it 
+    //for each timer make a ediatbletimer and pass all rhe props associated with respective timer
     const timers = this.props.timers.map((timer) => (
       <EditableTimer
         key={timer.id}
@@ -86,12 +91,14 @@ class EditableTimerList extends React.Component {
 }
 
 class EditableTimer extends React.Component {
+  //by default edit form will not open 
   state = {
     editFormOpen: false,
   };
 
   render() {
     if (this.state.editFormOpen) {
+      //if it will open render the timerform with props 
       return (
         <TimerForm
           id={this.props.id}
@@ -100,6 +107,7 @@ class EditableTimer extends React.Component {
         />
       );
     } else {
+      //render the timer face
       return (
         <Timer
           id={this.props.id}
@@ -148,6 +156,7 @@ class Timer extends React.Component {
 }
 
 class TimerForm extends React.Component {
+  //timerform has its own state which conatins title and projects to use in value
   state = {
     title: this.props.title || '',
     project: this.props.project || '',
