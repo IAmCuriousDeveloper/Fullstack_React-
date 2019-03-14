@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const content = document.createElement('div');
+const content = document.createElement("div");
 document.body.appendChild(content);
 
 module.exports = class extends React.Component {
   static displayName = "04-basic-input";
   state = { names: [] }; // <-- initial state
 
-  onFormSubmit = (evt) => {
+  onFormSubmit = evt => {
     const name = this.refs.name.value;
-    const names = [ ...this.state.names, name ];
+    const names = [...this.state.names, name];
     this.setState({ names: names });
-    this.refs.name.value = '';
+    this.refs.name.value = "";
     evt.preventDefault();
   };
 
@@ -21,10 +21,7 @@ module.exports = class extends React.Component {
         <h1>Sign Up Sheet</h1>
 
         <form onSubmit={this.onFormSubmit}>
-          <input
-            placeholder='Name'
-            ref='name'
-          />
+          <input placeholder='Name' ref='name' required />
 
           <input type='submit' />
         </form>
@@ -32,7 +29,9 @@ module.exports = class extends React.Component {
         <div>
           <h3>Names</h3>
           <ul>
-            { this.state.names.map((name, i) => <li key={i}>{name}</li>) }
+            {this.state.names.map((name, i) => (
+              <li key={i}>{name}</li>
+            ))}
           </ul>
         </div>
       </div>

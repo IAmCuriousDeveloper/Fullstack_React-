@@ -1,35 +1,35 @@
-import React from 'react';
+import React from "react";
 
-const content = document.createElement('div');
+const content = document.createElement("div");
 document.body.appendChild(content);
 
 module.exports = class extends React.Component {
-  static displayName = '06-state-input-multi';
+  static displayName = "06-state-input-multi";
 
   state = {
     fields: {
-      name: '',
-      email: ''
+      name: "",
+      email: ""
     },
     people: []
   };
-
+  //we use people array and es6 destructuring pattern to not mutate the state directly and setting the state as new people array in place of old one old one and resetting the field manually with empty string
   onFormSubmit = evt => {
     const people = [...this.state.people, this.state.fields];
     this.setState({
       people,
       fields: {
-        name: '',
-        email: ''
+        name: "",
+        email: ""
       }
     });
     evt.preventDefault();
   };
-
+  //for both name and email we use oninputchange we make a field obj and manupulate the properties of that obj with the evt.target.name and evt.target.value then setting the fields state
   onInputChange = evt => {
     const fields = Object.assign({}, this.state.fields);
     fields[evt.target.name] = evt.target.value;
-    this.setState({fields});
+    this.setState({ fields });
   };
 
   render() {
@@ -39,26 +39,26 @@ module.exports = class extends React.Component {
 
         <form onSubmit={this.onFormSubmit}>
           <input
-            placeholder="Name"
-            name="name"
+            placeholder='Name'
+            name='name'
             value={this.state.fields.name}
             onChange={this.onInputChange}
           />
 
           <input
-            placeholder="Email"
-            name="email"
+            placeholder='Email'
+            name='email'
             value={this.state.fields.email}
             onChange={this.onInputChange}
           />
 
-          <input type="submit" />
+          <input type='submit' />
         </form>
 
         <div>
           <h3>People</h3>
           <ul>
-            {this.state.people.map(({name, email}, i) => (
+            {this.state.people.map(({ name, email }, i) => (
               <li key={i}>
                 {name} ({email})
               </li>
